@@ -1,0 +1,275 @@
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.left-column,
+.right-column {
+    width: 48%;
+}
+
+.form-section {
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-header {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    height: 30px;
+    margin-right: 5px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.checkbox-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.consent-checkbox {
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.consent-label {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.country-code-dropdown {
+    width: calc(90px + 3mm);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.phone-input input {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .form-columns {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+    }
+}
+
+.payment-info-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.debit-credit-label {
+    color: red;
+    font-size: 1.5em;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    margin-left: 60px;
+    margin-bottom: 10px;
+}
+
+.form-section .payment-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.payment-icons {
+    margin-top: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #008000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    cursor: pointer;
+    width: 300px;
+    white-space: normal;
+}
+
+.trip-header {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.trip-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.trip-details-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.departure-seat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.departure-time-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+}
+
+.departure-time {
+    font-size: 13px;
+    text-align: left;
+}
+
+.trip-details-row div {
+    flex: 1;
+    text-align: left;
+    margin-right: 100px;
+    margin-top: 5px;
+}
+
+.trip-footer {
+    margin-top: -10px;
+}
+
+.trip-footer p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 5px;
+}

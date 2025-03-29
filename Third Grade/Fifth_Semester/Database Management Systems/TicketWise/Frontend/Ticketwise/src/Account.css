@@ -1,0 +1,103 @@
+.account-container-ac {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.account-header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.account-form-ac {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.account-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #555;
+}
+
+.account-label input,
+.account-label select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.2s;
+  margin-top: 5px;
+}
+
+input:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.account-button {
+  grid-column: span 2;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.account-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #a71d2a;
+}
+
+.cancel-button {
+  grid-column: span 2;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #007bff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cancel-button:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.account-label:last-of-type {
+  margin-bottom: 0;
+}

@@ -1,0 +1,338 @@
+@model IEnumerable<Ticketwise.Models.Trip>
+
+<div class="container mt-4">
+<form method="get" action="@Url.Action("Index", "Trip")">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="@Url.Action("Index", "Trip")" class="text-decoration-none text-dark">
+            <h2 class="mb-0">Trips</h2>
+        </a>
+        <!-- Filter Section for From, To, and Date -->
+        <div class="row mb-3 w-100 d-flex justify-content-end">
+            <!-- From Dropdown -->
+            <div class="col-md-3 mb-3 mb-md-0">
+                <label for="origin" class="form-label fs-6 fw-semibold mb-1 text-muted">From</label>
+                <select name="origin" id="origin" class="form-select shadow-sm">
+                    <option value="">Select Origin</option>
+                    @foreach (var city in ViewBag.Cities)
+                    {
+                        <option value="@city">@city</option>
+                    }
+                </select>
+            </div>
+            <!-- To Dropdown -->
+            <div class="col-md-3 mb-3 mb-md-0">
+                <label for="destination" class="form-label fs-6 fw-semibold mb-1 text-muted">To</label>
+                <select name="destination" id="destination" class="form-select shadow-sm">
+                    <option value="">Select Destination</option>
+                    @foreach (var city in ViewBag.Cities)
+                    {
+                        <option value="@city">@city</option>
+                    }
+                </select>
+            </div>
+            <!-- Date Input -->
+            <div class="col-md-3 mb-3 mb-md-0">
+                <label for="tripDate" class="form-label fs-6 fw-semibold mb-1 text-muted">Date</label>
+                <input type="date" name="tripDate" id="tripDate" class="form-control shadow-sm">
+            </div>
+            <!-- Submit Button -->
+            <div class="col-md-2 d-flex align-items-end">
+                <button id="filterBtn" class="btn btn-primary w-100 shadow-sm" type="submit">Search</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+    <!-- Tabs for Current and Past Trips -->
+    <ul class="nav nav-pills" id="tripTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-pill" id="current-trips-tab" data-bs-toggle="tab" data-bs-target="#current-trips" type="button" role="tab" aria-controls="current-trips" aria-selected="true">
+                Current Trips
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill" id="past-trips-tab" data-bs-toggle="tab" data-bs-target="#past-trips" type="button" role="tab" aria-controls="past-trips" aria-selected="false">
+                Past Trips
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-4" id="tripTabsContent">
+        <!-- Current Trips Tab -->
+        <div class="tab-pane fade show active" id="current-trips" role="tabpanel" aria-labelledby="current-trips-tab">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered rounded">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>License Plate</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Departure Time</th>
+                            <th>Travel Time</th>
+                            <th>Capacity</th>
+                            <th>Cost</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var trip in ViewBag.CurrentTrips)
+                        {
+                            <tr>
+                                <td>@trip.Vehicle.LicensePlate</td>
+                                <td>@trip.Origin</td>
+                                <td>@trip.Destination</td>
+                                <td>@trip.Date</td>
+                                <td>@trip.DepartureTime</td>
+                                <td>@trip.TravelTime</td>
+                                <td>@trip.Vehicle.Capacity</td>
+                                <td>@trip.Cost</td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm me-1" asp-action="Edit" asp-route-id="@trip.Id">Edit</a>
+                                    <a class="btn btn-info btn-sm me-1" href="javascript:void(0);" onclick="showSeatLayout('@trip.Id')">View Seats</a>
+                                    <a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="showDeleteModal('@trip.Id')">Delete</a>
+                                </td>
+                            </tr>
+                            <!-- Bus Seat Layout (Hidden by default) -->
+                            <tr id="seat-layout-@trip.Id" class="seat-layout-row" style="display: none;">
+                                <td colspan="9">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div id="seats-@trip.Id" class="seat-layout-container">
+                                                <div class="bus-layout">
+                                                    @for (int column = 1; column <= 14; column++) 
+                                                    {
+                                                        int start = (column - 1) * 4 + 1; // First seat in the column
+                                                        int end = start + 3; // Last seat in the column
+
+                                                        // Create seats in the desired order (4, 3, 2, 1 for the first column)
+                                                        for (int i = end; i >= start; i--) 
+                                                        {
+                                                            if(i == 1)
+                                                            {
+                                                                <button class="btn seat-btn driver" style="font-weight: bold; color: white; display: flex; align-items: center; justify-content: center;" disabled>Driver</button>
+                                                            }
+                                                            else if(i == 2 || i == 3 || i == 4 || i % 4 == 2 || i == 31 || i == 32)
+                                                            {
+                                                                <button class="btn seat-btn empty"></button>
+                                                            }
+                                                            else {
+                                                                var seatNumber = i - 4;
+                                                                var genderClass = ViewBag.SeatGenders.ContainsKey(trip.Id) && ViewBag.SeatGenders[trip.Id].ContainsKey(seatNumber) ? 
+                                                                    (ViewBag.SeatGenders[trip.Id][seatNumber] == "Male" ? "blue" : "pink") : "white";
+                                                                <button class="btn seat-btn @genderClass" onclick="selectSeat(@trip.Id, @seatNumber)">Seat @seatNumber</button>
+                                                            }
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Past Trips Tab -->
+        <div class="tab-pane fade" id="past-trips" role="tabpanel" aria-labelledby="past-trips-tab">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered rounded">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>License Plate</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Departure Time</th>
+                            <th>Travel Time</th>
+                            <th>Capacity</th>
+                            <th>Cost</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var trip in ViewBag.PastTrips)
+                        {
+                            <tr>
+                                <td>@trip.Vehicle.LicensePlate</td>
+                                <td>@trip.Origin</td>
+                                <td>@trip.Destination</td>
+                                <td>@trip.Date</td>
+                                <td>@trip.DepartureTime</td>
+                                <td>@trip.TravelTime</td>
+                                <td>@trip.Vehicle.Capacity</td>
+                                <td>@trip.Cost</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm me-1" href="javascript:void(0);" onclick="showSeatLayout('@trip.Id')">View Seats</a>
+                                </td>
+                            </tr>
+                            <!-- Bus Seat Layout (Hidden by default) -->
+                            <tr id="seat-layout-@trip.Id" class="seat-layout-row" style="display:none;">
+                                <td colspan="9">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div id="seats-@trip.Id" class="seat-layout-container">
+                                                <div class="bus-layout">
+                                                    @for (int column = 1; column <= 14; column++) 
+                                                    {
+                                                        int start = (column - 1) * 4 + 1; // First seat in the column
+                                                        int end = start + 3; // Last seat in the column
+
+                                                        // Create seats in the desired order (4, 3, 2, 1 for the first column)
+                                                        for (int i = end; i >= start; i--) 
+                                                        {
+                                                            if(i == 1)
+                                                            {
+                                                                <button class="btn seat-btn driver" style="font-weight: bold; color: white; display: flex; align-items: center; justify-content: center;" disabled>Driver</button>
+                                                            }
+                                                            else if(i == 2 || i == 3 || i == 4 || i % 4 == 2 || i == 31 || i == 32)
+                                                            {
+                                                                <button class="btn seat-btn empty"></button>
+                                                            }
+                                                            else {
+                                                                var seatNumber = i - 4;
+                                                                var genderClass = ViewBag.SeatGenders.ContainsKey(trip.Id) && ViewBag.SeatGenders[trip.Id].ContainsKey(seatNumber) ? 
+                                                                    (ViewBag.SeatGenders[trip.Id][seatNumber] == "Male" ? "blue past" : "pink past") : "white past";
+                                                                <button class="btn seat-btn @genderClass" disabled>Seat @seatNumber</button>
+                                                            }
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this vehicle?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .bus-layout {
+            display: grid;
+            grid-template-rows: repeat(4, 1fr); 
+            grid-auto-flow: column; 
+            gap: 10px; 
+            justify-content: center;
+            align-items: center;
+        }
+        .seat-btn {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            transform: rotate(-90deg); 
+            transform-origin: center;
+        }
+        .seat-btn:hover {
+            transform: scale(1.1) rotate(-90deg);
+            cursor: pointer;
+        }
+        .seat-btn.blue {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+        }
+        .seat-btn.pink {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+        }
+        .seat-btn.white {
+            background-color: #abadad;
+            color: black;
+        }
+        .seat-btn.empty {
+            background-color: #ffffff;
+            color: #ffffff;
+            cursor: not-allowed;
+        }
+        .seat-btn.driver {
+            background-color: #6d0b0b;
+            color: #ffffff;
+            cursor: not-allowed;
+        }
+        .nav-pills .nav-link {
+            background-color: #f8f9fa;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .nav-pills .nav-link:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .container {
+            height: 100vh; 
+            overflow-y: auto; 
+            overflow-x: hidden; 
+            padding: 20px; 
+            box-sizing: border-box;
+        }
+    </style>
+
+    <script>
+        function showDeleteModal(tripId) {
+            // Show the modal
+            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            deleteModal.show();
+
+            // Set the ID to the delete button for confirmation
+            document.getElementById('confirmDeleteButton').onclick = function () {
+                var deleteUrl = '@Url.Action("Delete", "Trip")';
+                window.location.href = deleteUrl + '?id=' + tripId;
+            };
+        }
+
+        function showSeatLayout(tripId) {
+            var seatRow = document.getElementById('seat-layout-' + tripId);
+            if (seatRow.style.display === 'none') {
+                seatRow.style.display = 'table-row';
+            } else {
+                seatRow.style.display = 'none';
+            }
+        }
+
+        function selectSeat(tripId, seatNumber) {
+            alert('Seat ' + seatNumber + ' for Trip ' + tripId + ' selected!');
+            // Add additional functionality here to mark seats as selected or save the choice
+        }
+    </script>
+
+</div>
+
+
+<!-- Bootstrap JS (if not already included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+

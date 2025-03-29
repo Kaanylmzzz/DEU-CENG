@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticketwise Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="~/css/site.css" rel="stylesheet" />
+    <script src="/lib/jquery/dist/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        .sidebar {
+            position: fixed; /* Sidebar'ı sabitler */
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 15%; /* Sidebar genişliği */
+            background-color: #06325e;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1000; /* Üstte görünmesini sağlar */
+        }
+        
+
+        .sidebar .nav-link {
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #495057;
+            font-weight: bold;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+
+        .sidebar .nav-icon {
+            margin-right: 8px;
+        }
+
+        .user-info {
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.1em;
+            margin-top: 75px;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .user-info.fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            width: 15%;
+            background-color: #06325e;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .user-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            color: #f9f9f9;
+        }
+
+        .user-name i {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        /* Logout button design */
+        .logout-btn {
+            background-color: #ff6b6b;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn:hover {
+            background-color: #e63946;
+            transform: translateY(-2px);
+        }
+
+        .logout-btn:active {
+            background-color: #d62839;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+        }
+
+        /* Ensure dropdown items slide smoothly */
+        .collapse {
+            transition: all 0.3s ease-out;
+        }
+        .pagination {
+            position: fixed;
+            bottom: 0;
+            left: 55%;
+            transform: translateX(-50%);
+            margin-bottom: 0;
+            background-color: #ffffff;  /* Optional: background color */
+            padding: 0.5rem 0;
+            width: auto;  /* Ensures the pagination doesn't stretch */
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar p-3">
+                <h3 class="text-center my-3">
+                    <a href="@Url.Action("Index", "Home")" class="text-white text-decoration-none" style="cursor: pointer;">Ticketwise Dashboard</a>
+                </h3>
+
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Admin" asp-action="Index">
+                            <i class="bi bi-people nav-icon"></i> Admins
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Employee" asp-action="Index">
+                            <i class="bi bi-person-badge nav-icon"></i> Employees
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Customer" asp-action="Index">
+                            <i class="bi bi-person-lines-fill nav-icon"></i> Customers
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Vehicle" asp-action="Index">
+                            <i class="bi bi-truck nav-icon"></i> Vehicles
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#tripsDropdown" role="button" aria-expanded="false" aria-controls="tripsDropdown">
+                            <i class="bi bi-map nav-icon"></i> Trips
+                            <i class="bi bi-chevron-down ms-2"></i> <!-- Aşağı bakan ok -->
+                        </a>
+                        <ul class="collapse nav flex-column ms-3" id="tripsDropdown">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" asp-controller="Trip" asp-action="AddTrip">
+                                    <i class="bi bi-plus-circle nav-icon"></i> Add Trip
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" asp-controller="Trip" asp-action="Index">
+                                    <i class="bi bi-list nav-icon"></i> List Trips
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Ticket" asp-action="Index">
+                            <i class="bi bi-ticket-perforated nav-icon"></i> Tickets
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Payment" asp-action="Index">
+                            <i class="bi bi-credit-card nav-icon"></i> Payments
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Refund" asp-action="Index">
+                            <i class="bi bi-arrow-repeat nav-icon"></i> Refunds
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- User Info and Logout -->
+                <div class="user-info fixed-bottom">
+                    <div class="user-name">
+                        <i class="bi bi-person-circle"></i>
+                        <strong>@Context.Session.GetString("AdminName")</strong>
+                    </div>
+                    <form asp-controller="Login" asp-action="Logout" method="post">
+                        <button type="submit" class="logout-btn">Log out</button>
+                    </form>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                @RenderBody()
+
+                <!-- Pagination -->
+                @if (ViewBag.TotalPages != null)
+                {
+                    <nav>
+                        <ul class="pagination">
+                            @if (ViewBag.CurrentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 })" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                            {
+                                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                </li>
+                            }
+
+                            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 })" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                }
+            </main>
+
+        </div>
+    </div>
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>

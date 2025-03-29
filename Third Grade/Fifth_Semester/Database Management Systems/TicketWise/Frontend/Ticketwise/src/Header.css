@@ -1,0 +1,30 @@
+.dropdown-menu button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    text-align: left;
+    display: block;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.dropdown-menu button:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.logout-link {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+
+.logout-link:hover {
+    background-color: #f0f0f0;
+}

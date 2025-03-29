@@ -1,0 +1,114 @@
+@model IEnumerable<Ticketwise.Models.TicketDetail>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Tickets</h2>
+        <form asp-action="Index" method="get" class="d-flex">
+            <div class="input-group me-2" style="width: 250px;">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" name="searchString" class="form-control" placeholder="Search tickets..." value="@Context.Request.Query["searchString"]" />
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>PNR</th>
+                <th>Customer Name</th>
+                <th>Customer Surname</th>
+                <th>License Plate</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Departure Time</th>
+                <th>Seat Number</th>
+                <th>Gender</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ticket in Model)
+            {
+                <tr>
+                    <td>@ticket.Pnr</td>
+                    <td>@ticket.CustomerName</td>
+                    <td>@ticket.CustomerSurname</td>
+                    <td>@ticket.LicensePlate</td>
+                    <td>@ticket.Origin</td>
+                    <td>@ticket.Destination</td>
+                    <td>@ticket.Date</td>
+                    <td>@ticket.DepartureTime</td>
+                    <td>@ticket.SeatNumber</td>
+                    <td>@ticket.Gender</td>
+                    <td>
+                        <span class="badge" 
+                            style="background-color: @(ticket.Status == "Pending" ? "#f39c12" : 
+                                                    ticket.Status == "Completed" ? "#28a745" : 
+                                                    ticket.Status == "Failed" ? "#dc3545" : 
+                                                    ticket.Status == "Canceled" ? "#6c757d" : "#007bff");">
+                            @(ticket.Status)
+                        </span>
+                    </td>
+
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="showDeleteModal('@ticket.TicketId')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this ticket?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function showDeleteModal(tripId) {
+        // Show the modal
+        var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+        deleteModal.show();
+
+        // Set the ID to the delete button for confirmation
+        document.getElementById('confirmDeleteButton').onclick = function () {
+            var deleteUrl = '@Url.Action("Delete", "Ticket")';
+            window.location.href = deleteUrl + '?id=' + tripId;
+        };
+    }
+</script>

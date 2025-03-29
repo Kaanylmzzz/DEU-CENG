@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="records">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="student_info">
+                <xs:complexType>
+                  <xs:sequence>
+
+                    <xs:element name="name">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="19"/>
+			                    <xs:minLength value="2"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                    <xs:element name="surname">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="29"/>
+			                    <xs:minLength value="2"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+		                <xs:element name="stuID">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="[0-9]{4}510[0-9]{3}"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                   </xs:element>
+
+                    <xs:element name="gender">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="M"/>
+                          <xs:enumeration value="F"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                    <xs:element name="email">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com|yahoo\.com|ogr\.deu\.edu\.tr)"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                    <xs:element name="phone">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="\(\+90\)[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="grade_info">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="midterm">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="0"/>
+                          <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>  
+
+                    <xs:element name="project">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="0"/>
+                          <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>   
+
+                    <xs:element name="final">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="0"/>
+                          <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element> 
+                  </xs:sequence>
+
+                  <xs:attribute name="letter_grade">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="AA"/>
+                        <xs:enumeration value="BA"/>
+                        <xs:enumeration value="BB"/>
+                        <xs:enumeration value="CB"/>
+                        <xs:enumeration value="CC"/>
+                        <xs:enumeration value="DC"/>
+                        <xs:enumeration value="DD"/>
+                        <xs:enumeration value="FF"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>    
+
+              <xs:element name="regularStudent">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:pattern value="[👍👎]"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+              </xs:element>         
+
+              <xs:element name="course_surveyRating">
+    	          <xs:complexType>                  
+                  <xs:simpleContent>
+                    <xs:extension base="xs:positiveInteger">
+                      <xs:attribute name="hexVal_bigEnd" type="xs:string"/>
+                      <xs:attribute name="hexVal_littleEnd" type="xs:string"/>
+                      <xs:attribute name="decimal" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>                  
+                </xs:complexType>
+              </xs:element>              
+            </xs:sequence>
+            <xs:attribute name="id">
+                <xs:simpleType>
+                   <xs:restriction base="xs:string">
+                    <xs:pattern value="[1-9]|[1-4][0-9]|50"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>  
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

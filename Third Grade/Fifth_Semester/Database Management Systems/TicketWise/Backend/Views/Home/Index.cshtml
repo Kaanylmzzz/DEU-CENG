@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+            <h5 class="text-primary mb-3">Total Customers</h5>
+            <div class="stat-box p-3 bg-info text-white rounded shadow-sm text-center">
+                <p class="display-6 mb-0">
+                    @if (ViewBag.Error != null)
+                    {
+                        <span class="text-danger">@ViewBag.Error</span>
+                    }
+                    else
+                    {
+                        @ViewBag.TotalCustomers
+                    }
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+            <h5 class="text-primary mb-3">Total Employees</h5>
+            <div class="stat-box p-3 bg-success text-white rounded shadow-sm text-center">
+                <p class="display-6 mb-0">
+                    @if (ViewBag.Error != null)
+                    {
+                        <span class="text-danger">@ViewBag.Error</span>
+                    }
+                    else
+                    {
+                        @ViewBag.TotalEmployees
+                    }
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+            <h5 class="text-primary mb-3">Total Admins</h5>
+            <div class="stat-box p-3 bg-warning text-white rounded shadow-sm text-center">
+                <p class="display-6 mb-0">
+                    @if (ViewBag.Error != null)
+                    {
+                        <span class="text-danger">@ViewBag.Error</span>
+                    }
+                    else
+                    {
+                        @ViewBag.TotalAdmins
+                    }
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-primary text-center mb-4">Monthly Revenue</h4>
+            <div class="p-3 border rounded bg-light">
+                <canvas id="monthlyRevenueChart" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var monthlyRevenues = @Html.Raw(Json.Serialize(ViewBag.MonthlyRevenues ?? new List<decimal>()));
+            var labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            var ctx = document.getElementById('monthlyRevenueChart').getContext('2d');
+            var monthlyRevenueChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Monthly Revenue (TL)',
+                        data: monthlyRevenues,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                        pointBorderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return '$' + tooltipItem.raw.toFixed(2); // Format tooltips with dollar sign
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: Math.max(...monthlyRevenues) * 1.2
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+}

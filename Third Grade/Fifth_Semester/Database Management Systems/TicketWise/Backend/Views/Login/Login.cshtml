@@ -1,0 +1,109 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        /* Temel sayfa ayarları */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+        }
+
+        /* Giriş formu kutusu */
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form elemanları */
+        label {
+            color: #666;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #06325e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #06325e;
+        }
+
+        /* Yardımcı bağlantı */
+        .helper-link {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .helper-link a {
+            color: #06325e;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .helper-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form method="post" asp-controller="Login" asp-action="Login">
+            <div>
+                <label for="Email">Email:</label>
+                <input type="Email" id="Email" name="Email" required />
+            </div>
+            <div>
+                <label for="Password">Password:</label>
+                <input type="Password" id="Password" name="Password" required />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="helper-link">
+            <a href="#">Şifremi unuttum</a>
+        </div>
+    </div>
+</body>
+</html>

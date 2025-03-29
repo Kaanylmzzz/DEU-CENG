@@ -1,0 +1,200 @@
+1,Kamil Koç,Bus,35DEF4579,İzmir,Aydın,24-05-2024,14:30,2.40,true,false,479
+2,Kamil Koç,Bus,45HIJ4589,İstanbul,Muğla,25-05-2024,09:00,3.50,false,true,523
+3,Kamil Koç,Bus,55LMN4599,Eskişehir,İzmir,24-05-2024,16:45,2.80,true,true,418
+4,Kamil Koç,Bus,35DEF4579,Muğla,İzmir,25-05-2024,07:20,4.10,false,false,580
+5,Kamil Koç,Bus,45HIJ4589,Aydın,Eskişehir,24-05-2024,19:15,1.30,true,false,170
+6,Kamil Koç,Bus,55LMN4599,İstanbul,Aydın,25-05-2024,12:45,3.90,false,true,490
+7,Kamil Koç,Bus,35DEF4579,Muğla,İstanbul,24-05-2024,08:00,5.20,true,false,600
+8,Kamil Koç,Bus,45HIJ4589,İzmir,Eskişehir,25-05-2024,17:30,4.00,false,false,500
+9,Kamil Koç,Bus,55LMN4599,Aydın,İzmir,24-05-2024,06:45,1.40,true,true,180
+10,Kamil Koç,Bus,35DEF4579,İzmir,Muğla,25-05-2024,11:00,2.30,false,false,275
+11,Pamukkale,Bus,34ABC4578,İzmir,İstanbul,24-05-2024,12:00,5.30,true,false,640
+12,Pamukkale,Bus,44EFG4588,Muğla,Aydın,25-05-2024,13:30,3.70,false,true,445
+13,Pamukkale,Bus,54IJK4598,Eskişehir,Muğla,24-05-2024,08:45,4.10,true,true,580
+14,Pamukkale,Bus,34ABC4578,İstanbul,İzmir,25-05-2024,15:20,1.30,false,false,170
+15,Pamukkale,Bus,44EFG4588,Aydın,Eskişehir,24-05-2024,18:15,2.00,true,false,240
+16,Pamukkale,Bus,54IJK4598,Muğla,İstanbul,25-05-2024,10:45,5.20,false,true,600
+17,Pamukkale,Bus,34ABC4578,İzmir,Muğla,24-05-2024,14:30,2.40,true,false,288
+18,Pamukkale,Bus,44EFG4588,Eskişehir,Aydın,25-05-2024,16:15,3.50,false,false,420
+19,Pamukkale,Bus,54IJK4598,Aydın,İstanbul,24-05-2024,09:30,6.00,true,true,720
+20,Pamukkale,Bus,34ABC4578,Muğla,Eskişehir,25-05-2024,11:45,3.80,false,false,455
+21,Demiryolu,Train,36GHI4580,İstanbul,Ankara,24-05-2024,11:30,3.80,true,false,455
+22,Demiryolu,Train,46KLM4590,İzmir,Eskişehir,25-05-2024,14:15,4.00,false,true,500
+23,Demiryolu,Train,56OPQ4600,Eskişehir,İstanbul,24-05-2024,17:45,2.50,true,true,320
+24,Demiryolu,Train,36GHI4580,Muğla,İzmir,25-05-2024,09:20,3.10,false,false,400
+25,Demiryolu,Train,46KLM4590,Aydın,İstanbul,24-05-2024,20:00,2.80,true,false,350
+26,Demiryolu,Train,56OPQ4600,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+27,Demiryolu,Train,36GHI4580,Eskişehir,İstanbul,24-05-2024,12:30,3.50,true,false,450
+28,Demiryolu,Train,46KLM4590,Muğla,Aydın,25-05-2024,18:15,2.20,false,false,275
+29,Demiryolu,Train,56OPQ4600,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+30,Demiryolu,Train,36GHI4580,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510
+31,Pegasus,Plane,37JKL4581,İstanbul,Muğla,24-05-2024,10:30,1.20,true,false,600
+32,Pegasus,Plane,47NOP4591,İzmir,Aydın,25-05-2024,13:00,2.10,false,true,700
+33,Pegasus,Plane,57RST4601,Eskişehir,Aydın,24-05-2024,16:00,1.50,true,true,600
+34,Pegasus,Plane,37JKL4581,Muğla,İzmir,25-05-2024,07:45,1.20,false,false,550
+35,Pegasus,Plane,47NOP4591,Aydın,İstanbul,24-05-2024,14:30,1.30,true,false,680
+36,Pegasus,Plane,57RST4601,İzmir,Eskişehir,25-05-2024,09:15,1.10,false,true,500
+37,Pegasus,Plane,37JKL4581,İstanbul,İzmir,24-05-2024,11:00,1.00,true,false,450
+38,Pegasus,Plane,47NOP4591,Eskişehir,Muğla,25-05-2024,12:45,1.40,false,false,570
+39,Pegasus,Plane,57RST4601,Muğla,İstanbul,24-05-2024,08:30,1.20,true,true,480
+40,Pegasus,Plane,37JKL4581,Aydın,İzmir,25-05-2024,15:00,1.50,false,false,300
+41,Metro Turizm,Bus,38MNO4582,İzmir,İstanbul,24-05-2024,08:30,5.20,true,false,600
+42,Metro Turizm,Bus,48QRS4592,Muğla,Aydın,25-05-2024,12:15,4.30,false,true,520
+43,Metro Turizm,Bus,58UVW4602,Eskişehir,İstanbul,24-05-2024,18:45,6.00,true,true,700
+44,Metro Turizm,Bus,38MNO4582,İstanbul,Muğla,25-05-2024,09:00,5.00,false,false,580
+45,Metro Turizm,Bus,48QRS4592,İzmir,Aydın,24-05-2024,17:00,2.50,true,false,300
+46,Metro Turizm,Bus,58UVW4602,Muğla,Eskişehir,25-05-2024,13:30,3.70,false,true,450
+47,Metro Turizm,Bus,38MNO4582,Aydın,İstanbul,24-05-2024,07:45,6.20,true,false,750
+48,Metro Turizm,Bus,48QRS4592,İzmir,Muğla,25-05-2024,15:15,2.20,false,false,265
+49,Metro Turizm,Bus,58UVW4602,Eskişehir,Aydın,24-05-2024,06:45,3.80,true,true,455
+50,Metro Turizm,Bus,38MNO4582,İstanbul,İzmir,25-05-2024,10:45,4.30,false,false,520
+51,THY,Plane,39PQR4583,İstanbul,Aydın,24-05-2024,07:30,1.10,true,false,500
+52,THY,Plane,49TUV4593,İzmir,İstanbul,25-05-2024,12:00,2.00,false,true,650
+53,THY,Plane,59XYZ4603,Eskişehir,İzmir,24-05-2024,15:00,1.30,true,true,550
+54,THY,Plane,39PQR4583,Muğla,İzmir,25-05-2024,08:45,1.10,false,false,500
+55,THY,Plane,49TUV4593,Aydın,İstanbul,24-05-2024,13:30,1.20,true,false,600
+56,THY,Plane,59XYZ4603,İzmir,Muğla,25-05-2024,09:15,1.30,false,true,550
+57,THY,Plane,39PQR4583,Eskişehir,İstanbul,24-05-2024,11:00,1.50,true,false,700
+58,THY,Plane,49TUV4593,Muğla,Aydın,25-05-2024,12:45,1.10,false,false,400
+59,THY,Plane,59XYZ4603,İstanbul,İzmir,24-05-2024,10:30,1.20,true,true,650
+60,THY,Plane,39PQR4583,Aydın,Eskişehir,25-05-2024,16:15,1.40,false,false,600
+61,Ulusoy,Bus,40STU4584,İstanbul,Aydın,24-05-2024,08:30,2.00,true,false,240
+62,Ulusoy,Bus,50WXY4594,İzmir,Ankara,25-05-2024,14:15,5.00,false,true,600
+63,Ulusoy,Bus,60ABC4604,Eskişehir,İzmir,24-05-2024,17:45,5.50,true,true,660
+64,Ulusoy,Bus,40STU4584,Muğla,İzmir,25-05-2024,09:00,5.00,false,false,580
+65,Ulusoy,Bus,50WXY4594,Aydın,İstanbul,24-05-2024,20:00,2.50,true,false,300
+66,Ulusoy,Bus,60ABC4604,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+67,Ulusoy,Bus,40STU4584,Eskişehir,İstanbul,24-05-2024,12:30,3.50,true,false,450
+68,Ulusoy,Bus,50WXY4594,Muğla,Aydın,25-05-2024,18:15,2.20,false,false,275
+69,Ulusoy,Bus,60ABC4604,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+70,Ulusoy,Bus,40STU4584,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510
+71,TCDD,Train,41VWX4585,İstanbul,Ankara,24-05-2024,11:30,3.80,true,false,455
+72,TCDD,Train,51ZAB4595,İzmir,Eskişehir,25-05-2024,14:15,4.00,false,true,500
+73,TCDD,Train,61DEF4605,Eskişehir,İstanbul,24-05-2024,17:45,2.50,true,true,320
+74,TCDD,Train,41VWX4585,Muğla,İzmir,25-05-2024,09:20,3.10,false,false,400
+75,TCDD,Train,51ZAB4595,Aydın,İstanbul,24-05-2024,20:00,2.80,true,false,350
+76,TCDD,Train,61DEF4605,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+77,TCDD,Train,41VWX4585,Eskişehir,İstanbul,24-05-2024,12:30,3.50,true,false,450
+78,TCDD,Train,51ZAB4595,Muğla,Aydın,25-05-2024,18:15,2.20,false,false,275
+79,TCDD,Train,61DEF4605,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+80,TCDD,Train,41VWX4585,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510
+81,Anadolu Jet,Plane,42YZA4586,İstanbul,Antalya,24-05-2024,10:30,1.20,true,false,600
+82,Anadolu Jet,Plane,52CDE4596,İzmir,Aydın,25-05-2024,13:00,2.10,false,true,700
+83,Anadolu Jet,Plane,62GHI4606,Eskişehir,Muğla,24-05-2024,16:00,1.50,true,true,600
+84,Anadolu Jet,Plane,42YZA4586,Muğla,İzmir,25-05-2024,07:45,1.20,false,false,550
+85,Anadolu Jet,Plane,52CDE4596,Aydın,İstanbul,24-05-2024,14:30,1.30,true,false,680
+86,Anadolu Jet,Plane,62GHI4606,İzmir,Eskişehir,25-05-2024,09:15,1.10,false,true,500
+87,Anadolu Jet,Plane,42YZA4586,İstanbul,İzmir,24-05-2024,11:00,1.00,true,false,450
+88,Anadolu Jet,Plane,52CDE4596,Eskişehir,Muğla,25-05-2024,12:45,1.40,false,false,570
+89,Anadolu Jet,Plane,62GHI4606,Muğla,İstanbul,24-05-2024,08:30,1.20,true,true,480
+90,Anadolu Jet,Plane,42YZA4586,Aydın,İzmir,25-05-2024,15:00,0.50,false,false,300
+91,Nilüfer Turizm,Bus,43BCD4587,İzmir,İstanbul,24-05-2024,08:30,5.20,true,false,600
+92,Nilüfer Turizm,Bus,53FGH4597,Muğla,Aydın,25-05-2024,12:15,4.30,false,true,520
+93,Nilüfer Turizm,Bus,63JKL4607,Eskişehir,İstanbul,24-05-2024,18:45,6.00,true,true,700
+94,Nilüfer Turizm,Bus,43BCD4587,İstanbul,Muğla,25-05-2024,09:00,5.00,false,false,580
+95,Nilüfer Turizm,Bus,53FGH4597,İzmir,Aydın,24-05-2024,17:00,2.50,true,false,300
+96,Nilüfer Turizm,Bus,63JKL4607,Muğla,Eskişehir,25-05-2024,13:30,3.70,false,true,450
+97,Nilüfer Turizm,Bus,43BCD4587,Aydın,İstanbul,24-05-2024,07:45,6.20,true,false,750
+98,Nilüfer Turizm,Bus,53FGH4597,İzmir,Muğla,25-05-2024,15:15,2.20,false,false,265
+99,Nilüfer Turizm,Bus,63JKL4607,Eskişehir,Aydın,24-05-2024,06:45,3.80,true,true,455
+100,Nilüfer Turizm,Bus,43BCD4587,İstanbul,İzmir,25-05-2024,10:45,4.30,false,false,520
+101,Metro Turizm,Bus,64MNP4608,İzmir,İstanbul,24-05-2024,12:30,5.00,true,false,550
+102,Metro Turizm,Bus,65QRS4609,Muğla,Eskişehir,25-05-2024,13:45,3.50,false,true,430
+103,Metro Turizm,Bus,66TUV4610,İstanbul,İzmir,24-05-2024,15:30,5.20,true,true,600
+104,Metro Turizm,Bus,67WXY4611,Aydın,Muğla,25-05-2024,10:15,2.30,false,false,275
+105,Pamukkale,Bus,68ZAB4612,İzmir,İstanbul,24-05-2024,11:45,5.10,true,false,640
+106,Pamukkale,Bus,69CDE4613,Muğla,Eskişehir,25-05-2024,16:15,4.00,false,true,500
+107,Pamukkale,Bus,70FGH4614,Eskişehir,İzmir,24-05-2024,17:00,1.50,true,true,600
+108,Pamukkale,Bus,71IJK4615,İstanbul,İzmir,25-05-2024,14:00,4.30,false,false,520
+109,Pamukkale,Bus,72LMN4616,Muğla,Aydın,24-05-2024,19:15,3.70,true,false,450
+110,Pamukkale,Bus,73OPQ4617,İzmir,Muğla,25-05-2024,08:30,3.00,false,true,370
+111,Demiryolu,Train,74RST4618,İstanbul,Aydın,24-05-2024,12:30,3.80,true,false,455
+112,Demiryolu,Train,75UVW4619,İzmir,Eskişehir,25-05-2024,10:00,4.00,false,true,500
+113,Demiryolu,Train,76XYZ4620,Eskişehir,İstanbul,24-05-2024,15:45,2.50,true,true,320
+114,Demiryolu,Train,77ABC4621,Muğla,İzmir,25-05-2024,13:30,3.10,false,false,400
+115,Demiryolu,Train,78DEF4622,Aydın,İstanbul,24-05-2024,18:00,2.80,true,false,350
+116,Demiryolu,Train,79GHI4623,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+117,Demiryolu,Train,80JKL4624,Eskişehir,İstanbul,24-05-2024,11:00,3.50,true,false,450
+118,Demiryolu,Train,01MNO4625,Muğla,Aydın,25-05-2024,17:00,2.20,false,false,275
+119,Demiryolu,Train,02PQR4626,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+120,Demiryolu,Train,03STU4627,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510
+121,Pegasus,Plane,04VWX4628,İstanbul,Antalya,24-05-2024,09:30,1.20,true,false,600
+122,Pegasus,Plane,05YZA4629,İzmir,Eskişehir,25-05-2024,13:45,2.10,false,true,700
+123,Pegasus,Plane,06BCD4630,Eskişehir,Bursa,24-05-2024,15:00,1.50,true,true,600
+124,Pegasus,Plane,07EFG4631,Muğla,İzmir,25-05-2024,08:00,1.20,false,false,550
+125,Pegasus,Plane,08HIJ4632,Aydın,İstanbul,24-05-2024,14:30,1.30,true,false,680
+126,Pegasus,Plane,09KLM4633,İzmir,Eskişehir,25-05-2024,09:15,1.10,false,true,500
+127,Pegasus,Plane,07NOP4634,İstanbul,İzmir,24-05-2024,11:00,1.00,true,false,450
+128,Pegasus,Plane,01QRS4635,Eskişehir,Muğla,25-05-2024,12:45,1.40,false,false,570
+129,Pegasus,Plane,02TUV4636,Muğla,İstanbul,24-05-2024,08:30,1.20,true,true,480
+130,Pegasus,Plane,03WXY4637,Aydın,İzmir,25-05-2024,15:00,1.50,false,false,300
+131,THY,Plane,04ZAB4638,İstanbul,Muğla,24-05-2024,07:30,1.10,true,false,500
+132,THY,Plane,05CDE4639,İzmir,İstanbul,25-05-2024,12:00,2.00,false,true,650
+133,THY,Plane,06FGH4640,Eskişehir,Bursa,24-05-2024,15:00,1.30,true,true,550
+134,THY,Plane,07IJK4641,Muğla,İzmir,25-05-2024,08:45,1.10,false,false,500
+135,THY,Plane,08LMN4642,Aydın,İstanbul,24-05-2024,13:30,1.20,true,false,600
+136,THY,Plane,09OPQ4643,İzmir,Muğla,25-05-2024,09:15,1.30,false,true,550
+137,THY,Plane,10RST4644,Eskişehir,İstanbul,24-05-2024,11:00,1.50,true,false,700
+138,THY,Plane,11UVW4645,Muğla,Aydın,25-05-2024,12:45,1.10,false,false,400
+139,THY,Plane,12XYZ4646,İstanbul,İzmir,24-05-2024,10:30,1.20,true,true,650
+140,THY,Plane,13ABC4647,Aydın,Muğla,25-05-2024,16:15,1.40,false,false,600
+141,Anadolu Jet,Plane,14DEF4648,İstanbul,İzmir,24-05-2024,10:30,1.20,true,false,600
+142,Anadolu Jet,Plane,15GHI4649,İzmir,Aydın,25-05-2024,13:00,2.10,false,true,700
+143,Anadolu Jet,Plane,16JKL4650,Eskişehir,Bursa,24-05-2024,16:00,1.50,true,true,600
+144,Anadolu Jet,Plane,17MNO4651,Muğla,İzmir,25-05-2024,07:45,1.20,false,false,550
+145,Anadolu Jet,Plane,18PQR4652,Aydın,İstanbul,24-05-2024,14:30,1.30,true,false,680
+146,Anadolu Jet,Plane,19STU4653,İzmir,Eskişehir,25-05-2024,09:15,1.10,false,true,500
+147,Anadolu Jet,Plane,11VWX4654,İstanbul,İzmir,24-05-2024,11:00,1.00,true,false,450
+148,Anadolu Jet,Plane,11YZA4655,Eskişehir,Muğla,25-05-2024,12:45,1.40,false,false,570
+149,Anadolu Jet,Plane,12BCD4656,Muğla,İstanbul,24-05-2024,08:30,1.20,true,true,480
+150,Anadolu Jet,Plane,13EFG4657,Aydın,İzmir,25-05-2024,15:00,1.50,false,false,300
+151,Nilüfer Turizm,Bus,14HIJ4658,İzmir,İstanbul,24-05-2024,08:30,5.20,true,false,600
+152,Nilüfer Turizm,Bus,15KLM4659,Muğla,Aydın,25-05-2024,12:15,4.30,false,true,520
+153,Nilüfer Turizm,Bus,16NOP4660,Eskişehir,İstanbul,24-05-2024,18:45,6.00,true,true,700
+154,Nilüfer Turizm,Bus,17QRS4661,İstanbul,Muğla,25-05-2024,09:00,5.00,false,false,580
+155,Nilüfer Turizm,Bus,18TUV4662,İzmir,Aydın,24-05-2024,17:00,2.50,true,false,300
+156,Nilüfer Turizm,Bus,19WXY4663,Muğla,Eskişehir,25-05-2024,13:30,3.70,false,true,450
+157,Nilüfer Turizm,Bus,20ZAB4664,Aydın,İstanbul,24-05-2024,07:45,6.20,true,false,750
+158,Nilüfer Turizm,Bus,21CDE4665,İzmir,Muğla,25-05-2024,15:15,2.20,false,false,265
+159,Nilüfer Turizm,Bus,22FGH4666,Eskişehir,Aydın,24-05-2024,06:45,3.80,true,true,455
+160,Nilüfer Turizm,Bus,23IJK4667,İstanbul,İzmir,25-05-2024,10:45,4.30,false,false,520
+161,Ulusoy,Bus,24LMN4668,İstanbul,Muğla,24-05-2024,08:30,2.00,true,false,240
+162,Ulusoy,Bus,25OPQ4669,İzmir,Ankara,25-05-2024,14:15,5.00,false,true,600
+163,Ulusoy,Bus,26RST4670,Eskişehir,Antalya,24-05-2024,17:45,5.50,true,true,660
+164,Ulusoy,Bus,27UVW4671,Muğla,İzmir,25-05-2024,09:00,5.00,false,false,580
+165,Ulusoy,Bus,28XYZ4672,Aydın,İstanbul,24-05-2024,20:00,2.50,true,false,300
+166,Ulusoy,Bus,29ABC4673,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+167,Ulusoy,Bus,30DEF4674,Eskişehir,İstanbul,24-05-2024,12:30,3.50,true,false,450
+168,Ulusoy,Bus,31GHI4675,Muğla,Aydın,25-05-2024,18:15,2.20,false,false,275
+169,Ulusoy,Bus,32JKL4676,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+170,Ulusoy,Bus,33MNO4677,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510
+171,TCDD,Train,34PQR4678,İstanbul,Ankara,24-05-2024,11:30,3.80,true,false,455
+172,TCDD,Train,35STU4679,İzmir,Eskişehir,25-05-2024,14:15,4.00,false,true,500
+173,TCDD,Train,36VWX4680,Eskişehir,İstanbul,24-05-2024,17:45,2.50,true,true,320
+174,TCDD,Train,37YZA4681,Muğla,İzmir,25-05-2024,09:20,3.10,false,false,400
+175,TCDD,Train,38BCD4682,Aydın,İstanbul,24-05-2024,20:00,2.80,true,false,350
+176,TCDD,Train,39EFG4683,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+177,TCDD,Train,40HIJ4684,Eskişehir,İstanbul,24-05-2024,11:00,3.50,true,false,450
+178,TCDD,Train,41KLM4685,Muğla,Aydın,25-05-2024,17:00,2.20,false,false,275
+179,TCDD,Train,42NOP4686,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+180,TCDD,Train,43QRS4687,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510
+181,Metro Turizm,Bus,44TUV4688,İzmir,İstanbul,24-05-2024,12:30,5.00,true,false,550
+182,Metro Turizm,Bus,45WXY4689,Muğla,Eskişehir,25-05-2024,13:45,3.50,false,true,430
+183,Metro Turizm,Bus,46ZAB4690,İstanbul,Ankara,24-05-2024,15:30,5.20,true,true,600
+184,Metro Turizm,Bus,47CDE4691,Aydın,Muğla,25-05-2024,10:15,2.30,false,false,275
+185,Pamukkale,Bus,48FGH4692,İzmir,İstanbul,24-05-2024,11:45,5.10,true,false,640
+186,Pamukkale,Bus,49IJK4693,Muğla,Eskişehir,25-05-2024,16:15,4.00,false,true,500
+187,Pamukkale,Bus,50LMN4694,Eskişehir,Bursa,24-05-2024,17:00,1.50,true,true,600
+188,Pamukkale,Bus,51OPQ4695,İstanbul,İzmir,25-05-2024,14:00,4.30,false,false,520
+189,Pamukkale,Bus,52RST4696,İstanbul,Aydın,24-05-2024,19:15,3.70,true,false,450
+190,Pamukkale,Bus,53UVW4697,İzmir,Muğla,25-05-2024,08:30,3.00,false,true,370
+191,Demiryolu,Train,54XYZ4698,İstanbul,Ankara,24-05-2024,12:30,3.80,true,false,455
+192,Demiryolu,Train,55ABC4699,İzmir,Eskişehir,25-05-2024,10:00,4.00,false,true,500
+193,Demiryolu,Train,56DEF4700,Eskişehir,İstanbul,24-05-2024,15:45,2.50,true,true,320
+194,Demiryolu,Train,57GHI4701,Muğla,İzmir,25-05-2024,13:30,3.10,false,false,400
+195,Demiryolu,Train,58JKL4702,Aydın,İstanbul,24-05-2024,18:00,2.80,true,false,350
+196,Demiryolu,Train,59MNO4703,İzmir,Muğla,25-05-2024,07:45,3.00,false,true,370
+197,Demiryolu,Train,60PQR4704,Eskişehir,İstanbul,24-05-2024,11:00,3.50,true,false,450
+198,Demiryolu,Train,61STU4705,Muğla,Aydın,25-05-2024,17:00,2.20,false,false,275
+199,Demiryolu,Train,62VWX4706,İstanbul,İzmir,24-05-2024,06:45,3.70,true,true,480
+200,Demiryolu,Train,63YZA4707,Aydın,Eskişehir,25-05-2024,10:30,4.10,false,false,510

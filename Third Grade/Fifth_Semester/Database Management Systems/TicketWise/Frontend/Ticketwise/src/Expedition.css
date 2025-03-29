@@ -1,0 +1,545 @@
+.expedition-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 180px;
+  background-color: #f5f5f5;
+}
+
+.bus-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bus-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.company-logo {
+  width: 100px;
+  height: auto;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.time-container,
+.type-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clock-icon {
+  width: 24px;
+  height: 24px;
+  margin-top: -15px;
+}
+
+.time {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.duration {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
+
+.type {
+  font-size: 20px;
+  font-weight: bold;
+  color: gray;
+}
+
+.route {
+  font-size: 18px;
+  color: #555;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  margin-left: auto;
+}
+
+.seat-select-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.seat-select-btn:hover {
+  background-color: #c9302c;
+}
+
+.seat-selection {
+  position: relative;
+  width: 100%; 
+  height: auto; 
+  margin-top: 20px;
+}
+
+.bus-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(13, 55px); 
+  gap: 10px;
+  padding: 20px; 
+  z-index: 1; 
+  margin-top: 30px;
+  margin-left: 140px; 
+}
+
+.seat {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: white; 
+  cursor: pointer;
+  user-select: none;
+}
+
+.seat.empty {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.seat.filled.male {
+  background-color: #a3caff;
+}
+
+.seat.filled.female {
+  background-color: #fca3b7;
+}
+
+.seat.male {
+  background-color: #a3caff;
+  color: #fff;
+}
+
+.seat.female {
+  background-color: #fca3b7;
+  color: #fff;
+}
+
+.seat.selected {
+  background-color: #94e1b6;
+  color: #fff;
+}
+
+.legend {
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+  row-gap: 10px;
+  margin-top: 12px;
+  margin-left: 30px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+  font-size: 12px; 
+}
+
+.legend-seat {
+  width: 25px; 
+  height: 25px; 
+  border-radius: 3px; 
+  border: 1px solid #ccc;
+}
+
+.legend-seat.male {
+  background-color: #a3caff;
+  color: #fff;
+}
+
+.legend-seat.female {
+  background-color: #fca3b7;
+  color: #fff;
+}
+
+.legend-seat.empty {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.legend-seat.selected {
+  background-color: #94e1b6;
+  color: #fff;
+}
+
+.type-container {
+  display: flex;
+  align-items: center;
+}
+
+.seat-icon {
+  width: 50px;
+  height: 40px;
+}
+
+.seat-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.bus-shape {
+  border: 5px solid #ddd;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: 50px 50px 80px 50px; 
+  gap: 15px 20px;
+  justify-content: center;
+}
+
+.seat-btn {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.seat-btn:hover {
+  transform: scale(1.1) rotate(-90deg);
+  cursor: pointer;
+}
+
+.seat-btn.blue {
+  background-color: #007bff;
+  color: white;
+}
+
+.seat-btn.red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.seat-btn.white {
+  background-color: #abadad;
+  color: black;
+}
+
+.seat-btn.corridor,
+.seat-btn.door-gap {
+  background-color: #f1f1f1;
+  color: #888;
+  cursor: not-allowed;
+  width: auto;
+  height: auto;
+}
+
+.seat.corridor {
+  background-color: transparent;
+  border: none;
+  cursor: default;
+  color: #ccc;
+}
+
+.bus-frame {
+  width: 100%;
+  height: auto;
+  position: relative; 
+  z-index: 0; 
+}
+
+.amenities {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.amenity-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.search-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 70%;
+  margin: 2rem auto; 
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.search-form select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.switch-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #1976D2;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.search-form input[type="date"] {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.search-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #1976D2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gender-selectionn {
+  position: absolute;
+  top: -90px;
+  left: -49px;
+  display: flex;
+  gap: 5px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.gender-selectionn-popup {
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px; 
+  background-color: white ;
+  border: 1px solid #ccc;
+  padding: 5px; 
+  border-radius: 5px;
+  z-index: 10; 
+}
+
+.gender-selectionn::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-top: 10px solid #ccc; 
+  z-index: 9; 
+}
+
+.gender-selectionn-popup .gender-button {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 3px; 
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.gender-selectionn-popup .gender-button .gender-span {
+  font-size: 10px; 
+  color: #333; 
+}
+
+.gender-selectionn .gender-button:hover {
+  background-color: #e0e0e0 ;
+}
+/* SİLİNEBİLİR */
+.seat.male {
+  background-color: blue; /* Erkek koltuğu */
+}
+
+.seat.female {
+  background-color: pink; /* Kadın koltuğu */
+}
+
+.seat.selected {
+  border: 2px solid black; /* Seçilen koltuk vurgusu */
+}
+
+.legend-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.seat-selection-header {
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px; 
+}
+
+.divider {
+  width: 2px;
+  background-color: #ccc;
+  height: 80px; 
+  margin-top: 6px; 
+}
+
+.selected-seats-container {
+  font-size: 14px; 
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  color: #333;
+}
+
+.no-seat-message {
+  font-style: italic;
+  color: #888;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.selected-seat {
+  width: 100px; 
+  height: 38px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  text-align: left;
+  color: white; 
+}
+
+.selected-seat.male {
+  background-color: #a3caff; 
+}
+
+.selected-seat.female {
+  background-color: #fca3b7; 
+}
+
+.selected-seats-list {
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px; 
+}
+
+.total-cost-container-inline {
+  position: absolute; 
+  top: 320px; 
+  right: 40px; 
+  text-align: center; 
+  padding: 10px 0;
+}
+
+.total-cost {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.purchase-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.purchase-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.no-buses-message {
+  text-align: center;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  margin: 20px 0; 
+  color: #333; 
+}

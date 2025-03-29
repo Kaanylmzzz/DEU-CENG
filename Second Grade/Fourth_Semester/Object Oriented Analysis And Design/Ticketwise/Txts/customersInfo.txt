@@ -1,0 +1,14 @@
+Kaan,Yılmaz,kaanylmz3553@gmail.com,05496185223,Male,17586947583,3 March 2003,Kaan56,true
+Ezgi,Tan,tanezgi368@gmail.com,05374109686,Male,17335540828,11 September 2024,Ezgi5608,true
+İrem,Tekin,iremt2001@gmail.com,05370544366,Female,15487986231,17 July 2001,İroteko11,true
+Sercan,Alan,sercan.alan@gmail.com,05548653390,Male,15769592666,7 January 1995,Sercan0909,true
+Ahmet,Yılmaz,ahmetylmz438@gmail.com,05496185224,Male,17586947584,1 April 1992,Ahmet56,true
+Ayşe,Demir,aysedemir764@gmail.com,05374109687,Female,17335540829,1 June 1999,Ayşe7608,true
+Mehmet,Çelik,mehmetclk245@gmail.com,05370544367,Male,15487986232,1 January 2006,Mehmet11,true
+Zeynep,Kara,zeynepkara195@gmail.com,05548653391,Female,15769592667,7 January 1995,Zeynep0909,true
+Ali,Şahin,alisahin433@gmail.com,05496185225,Male,17586947585,1 August 2001,Ali56,true
+Fatma,Özdemir,fatmaozdemir921@gmail.com,05374109688,Female,17335540830,1 November 2000,Fatma5608,true
+Mustafa,Arslan,mustafarsln876@gmail.com,05370544368,Male,15487986233,1 December 2003,Mustafa11,true
+Emine,Polat,eminepolat482@gmail.com,05548653392,Female,15769592668,7 October 1995,Emine0909,true
+Murat,Yıldırım,muratyildirim763@gmail.com,05496185226,Male,17586947586,21 January 2004,Murat56,true
+Elif,Kılıç,elifkilic109@gmail.com,05374109689,Female,17335540831,8 February 2004,Elif5608,true
